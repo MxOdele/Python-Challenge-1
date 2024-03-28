@@ -154,18 +154,97 @@ The order system will then thank you for your order and present you with two (2)
 
 Here is a detailed explanation of the code being used to operate this order system;
 
-| Lines | Notes |
+| Line(s) | Notes[^6] |
 | ---: | :--- |
-| 1-51 | Notes |
+| 2-51 | Declaring the dictionary `menu` |
+| **55** | **Declaring an empty list `order` to store the customer's order** |
+| 58 | Print statement welcoming the customer to the food truck |
+| 62 | Declaring `place_order = True` to enable while loop |
+| *63-196* | *While loop to process the customer's order* |
+| 65 | Print statement prompting the customer to select a menu option |
+| 68 | Declaring a variable `i` for menu item numbers |
+| 70 | Declaring an empty dictionary `menu_items` to store menu items (which will be reused for the main menu as well as the four (4) food and drink menus) |
+| 74-79 | For loop to populate the `menu_items` table with the main menu options and item numbers |
+| 82 | Entering customer input as `menu_category` to select one of the four (4) food and drink menus |
+| *85-168* | *If/Else statement to verify if `menu_category` is a digit, and to inform the customer of an invalid selection if not (as well as display their selected menu and process their choice(s))* |
+| *87-164* | *If/Else statement to very if the digit entered for `menu_category` is a valid selection from the `menu_items` being displayed, and to inform the customer of an invalid selection if not (as well as process their choice(s))* |
+| 89 | Declaring `menu_category_name` based on an integer casted `menu_category` entered by the customer |
+| 91 | Print statment to display the `menu_category_name` selected by the customer |
+| 94 | Print statement prompting the customer to select an item from the menu's options |
+| 95 | Declaring a variable `i` for menu item numbers |
+| 97-98 | Print statements to display the menu headers |
+| 99-119 | For loop to print out the menu's options |
+| 101-119 | If/Else statement to format the print statements based on whether or not the menu selectied from the `menu` dictionary |
+| **121** | **Entering customer input as `menu_selection` to select on of the options in the current menu** |
+| **124-161** | **If/Else statement to verify if `menu_selection` is a digit, and to inform the customer of an invalid selection if not (as well as verify if `menu_selection` is a valid selection from the `menu_items` being displayed, prompt the customer for the quantity of their selected item, store the variables `selection_name`, `selection_quantity`, and `selection_price` based on the custoemr's selection, and append those variable to the `order` list as a dictionary)** |
+| **127** | **Converting `menu_selection` to an integer** |
+| **130-157** | **If/Else statement to verify if `menu_selection` is a valid selection from the `menu_items` being displayed (as well as prompt the customer for the quantity of their selected item, store the variables `selection_name`, `selection_quantity`, and `selection_price` based on the custoemr's selection, and append those variable to the `order` list as a dictionary)** |
+| **133** | **Declaring `selection_name` based on the `menu_selection` ebtered by the customer** |
+| **136** | **Entering customer input as `selection_quantity` to select the amount of their choice to add to their order** |
+| **139-142** | **If/Else statement to verify if `selection_quantity` is a digit, convert it to an integer if it is, and to default to a value of "1" if not** |
+| **145** | **Converting `selection_price` (based on `menu_selection`) to a float (this step may be superfluous, but I figured it was better to be safe than sorry)** |
+| **147-151** | **Declaring the dictionary `selection_add` and populating it with the values of `slection_name` for key `"Item name"`, `selection_price` for the key `"Price"` and `selection_quantity` for the key `"Quantity"`** |
+| **153** | **Appending dictionary `order` with `selection_add`** |
+| *170-196* | *While loop to prompt the customer for whether or not they wish to continue ordering after making a selection* |
+| 172 | Entering customer input as `keep_ordering` to select whether or not to conitnue ordering |
+| **175-196** | **Match-case statement to check the customer's input for `keep_ordering` (and converted to lower case for ease of writing cases)** |
+| **176-181** | **Case `"y"`, sets `place_order` as "True" to enable cotinuing the order and then breaks out of the current while loop (line 170) to return to the main menu (line 63)** |
+| **183-192** | **Case `"n"`, sets `palce_order` as "False" to complete order and then breaks from the current while loop (line 170) to progress to the confirmation of the customer's order (line 200)** |
+| **194-196** | **Case `"_"`, print statement to inform the customer of an invalid selection and to repeat the while loop (line 170)** |
+| 200 | Print statement preceding the customer's initial receipt |
+| 202-203 | Print statements to display the receipt's headers |
+| **206-222** | **For loop to print out the items in `order` list (as well as format spacing to maintain a uniform table)** |
+| **209** | **Declaring `item_name` based on the `"Item name"` key from items in `order`** |
+| **210** | **Declaring `price` based on the `"Price"` key from items in `order`** |
+| **211** | **Declaring `quantity` based on the `"Quantity"` key from items in `order`** |
+| **214** | **Calculating `num_selection_spaces` based on a static number and the length of `item_name` (this will be used on line 218)** |
+| **215** | **Calculating `num_price_spaces` based on a static number and the length of `price` (this will be used on line 219)** |
+| **218** | **Calculating `selection_spaces` based on `num_selection_spaces` (this will be used on line 222)** |
+| **219** | **Calculating `price_spaces` based on `num_price_spaces` (this will be used on line 222)** |
+| **222** | **Print statement using an f-string to display `item_name`, `price`, and `quantity`, and using `slection_spaces` and `price_spaces` to format spacing to maintain a uniform table** |
+| **230** | **Calculating `line_totals` using list comprehension to multiply `item_price` by `quantity` for each item in `order`** |
+| **233** | **Calculating `total_price` using a sum function on `line_totals` (this will be used on line 269)** |
+| **236** | **Print statement to create a linebreak for customer readability** |
+| **237** | **Print statement preceding the customer's itemized receipt (inlcuding another line break for readability)** |
+| **239-240**[^5] | **Print statements to display the itemized receipt's headers** |
+| **242-265** | **For loop to print out the items in `order` list (as well as format spacing to maintain a uniform table)** |
+| **245-247** | **As lines 209-211** |
+| **248** | **Declaring `line_totals` based on the values for the `"Price"` multiplied by the `"Quantity"` keys from items in `order`** |
+| **251-252** | **As lines 214-215 (to be used on lines 256-257)** |
+| **253** | **Calculating `num_quantity_spaces` based on a static number and the length of `quantity` (this will be used on line 258)** |
+| **256-257** | **As lines 218-219 (to be used on lines 262-263)** |
+| **258** | **Calculating `quantity_spaces` based on `num_quantity_spaces` (this will be used on line 264)** |
+| **262-265** | **Print statement (broken up over miltiple lines for readablity) using an f-string to display `item_name`, `price`, `quantity`, and `line_totals` and using `slection_spaces`, `price_spaces`, and `quantity_spaces` to format spacing to maintain a uniform table** |
+| **268** | **Print statement to break from the items in the itemized receipt (starting on line 242) from the grand total line** |
+| **269** | **Print statement using strings and f-strings to display the `total_price` in line with the "Total" column of the itemized receipt table** |
+| **270** | **Print statement thanking the cutomer for their order, again, because it seemed like a nice thing to do** |
 
-Text
+### *Answering some questions*
+
+* Why did you opt for in-line notation on lines 145, 189, 268, and 270?
+
+Well... Because it seemed like it made more sense to tuck them away there than to break a whole new line for each of them. Each note pertains to the justification of their included lines, so I thought the simplest solution would be to keep them together.
+
+* Why did you reprint the receipt section *just* to add a "Total" column?
+
+That is a very fair question. The assignment wording was a little unclear as to whether or not we were meant to *use* the `line_totals` that we calculated through list comprehension. That said, I wanted to both use the list comprehension specifically to calculate the `total_price` ***and*** to include a more detailed itemized receipt. Blame my years in retail, but I prefer to know how much the items are individually, how much I'm paying for each of them, and how much I'm paying for everything in the order. So? I made sure to cover my bases and kept both versions on the receipt in place. For small orders it's no problem at all. I imagine it will eat up extra screen space if there's a particularly large order, though... Something to refactor in the next version, I suppose.
+
+* Okay, but why indent "Grand Total" by a single space? That seems like an odd choice if you worked so hard to creat uniform tables twice.
+
+Yes! It does! *And* it draws the eye to the line naturally. A subtle little way to make sure the customer sees that final line on the receipt and knows exactly how much they've been charged.
+
+### *Final thoughts*
+
+This was a fun assignment! I think it was a really good way to drill some of the more complext methods we've covered in the second week, and helps put into perspective the importance of what we've been learning in the third. Also, it feels really good when you see your code starting to work like you want it to. Building it up around the provided framework was a very rewarding exercise!
 
 [^1]: Image courtesy of free source image site, <a href='https://www.pexels.com/photo/food-truck-1766682/' title='Link to Pexels listing for image'>Pexels</a>
 
-[^2]: **Any non-numeric value entered, or any numeric value entered that is not represented in the "Item #" column, will cause an invalid selection prompt to display, and the customer will be asked again to make a selection.**
+[^2]: Any non-numeric value entered, or any numeric value entered that is not represented in the "Item #" column, will cause an invalid selection prompt to display, and the customer will be asked again to make a selection.
 
-[^3]: **Any non-numeric value entered for quantity will default to a vlaue of one (1).**
+[^3]: Any non-numeric value entered for quantity will default to a vlaue of one (1).
 
-[^4]: **Any valueother than "Y", "y", "N", or "n" entered will cause an invalid selection prompt to display, and the customer will be asked again if they would like to keep ordering. However, the case of the customer's entry does not matter as the order system will convert it to lower case.**
+[^4]: Any valueother than "Y", "y", "N", or "n" entered will cause an invalid selection prompt to display, and the customer will be asked again if they would like to keep ordering. However, the case of the customer's entry does not matter as the order system will convert it to lower case.
 
-[^5]: **See: [Additional Information](#Additional-Information) for a more detailed explanation of the itemized receipt.**
+[^5]: See: [Answering some questions](#answering-some-questions) for a more detailed explanation of the itemized receipt.
+
+[^6]: Code added provided for the assignment will be formatted normally, code added for the assignment will be bolded, and blocks containing both provided and added code will be italicized.
