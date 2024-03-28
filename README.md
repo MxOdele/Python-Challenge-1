@@ -59,26 +59,14 @@ Upon loading the order system, the customer will be presented a menu with four (
 
 Once a secletion is made, the customer will be presented with one of four (4) menus corresponding to their choice;
 
-<div class='image-grid'>
-    <img src='https://github.com/MxOdele/Python-Challenge-1/blob/c8ab265fb8983afef499c393ff33414b3369f1c0/Screenshots/02-Snacks-Menu.png' title='Snacks menu' alt='A display of the snacks menu prompting the customer to select from the snack options and offering the prices.'/>
-    <img src='https://github.com/MxOdele/Python-Challenge-1/blob/c8ab265fb8983afef499c393ff33414b3369f1c0/Screenshots/03-Meals-Menu.png' title='Meals menu' alt='A display of the meals menu prompting the customer to select from the meal options and offering the prices.'/>
-    <img src='https://github.com/MxOdele/Python-Challenge-1/blob/c8ab265fb8983afef499c393ff33414b3369f1c0/Screenshots/04-Drinks-Menu.png' title='Drinks menu' alt='A display of the drinks menu prompting the customer to select from the drink options and offering the prices.'/>
-    <img src='https://github.com/MxOdele/Python-Challenge-1/blob/c8ab265fb8983afef499c393ff33414b3369f1c0/Screenshots/05-Desserts-Menu.png' stitle='Dessert menu' alt='A display of the dessert menu prompting the customer to select from the dessert options and offering the prices.'/>
+<div style='disply: flex; flex-wrap: wrap;'>
+    <img src='https://github.com/MxOdele/Python-Challenge-1/blob/c8ab265fb8983afef499c393ff33414b3369f1c0/Screenshots/02-Snacks-Menu.png' style='width: 45%; margin: 5px;' title='Snacks menu' alt='A display of the snacks menu prompting the customer to select from the snack options and offering the prices.'/>
+    <img src='https://github.com/MxOdele/Python-Challenge-1/blob/c8ab265fb8983afef499c393ff33414b3369f1c0/Screenshots/03-Meals-Menu.png' style='width: 45%; margin: 5px;' title='Meals menu' alt='A display of the meals menu prompting the customer to select from the meal options and offering the prices.'/>
+    <img src='https://github.com/MxOdele/Python-Challenge-1/blob/c8ab265fb8983afef499c393ff33414b3369f1c0/Screenshots/04-Drinks-Menu.png' style='width: 45%; margin: 5px;' title='Drinks menu' alt='A display of the drinks menu prompting the customer to select from the drink options and offering the prices.'/>
+    <img src='https://github.com/MxOdele/Python-Challenge-1/blob/c8ab265fb8983afef499c393ff33414b3369f1c0/Screenshots/05-Desserts-Menu.png' style='width: 45%; margin: 5px;' title='Dessert menu' alt='A display of the dessert menu prompting the customer to select from the dessert options and offering the prices.'/>
 </div>
 
-<style>
-.image-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-}
 
-.image-grid img {
-    max-width: 100%;
-    max-height: 300px;
-}
-</style>
 
 
 
