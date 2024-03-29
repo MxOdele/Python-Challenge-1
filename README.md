@@ -41,7 +41,7 @@ Python v3.10.13
 
 ### *Accessing the order system*
 
-To access the, simply download the **menu.py** file in this repository and load it through your terminal. A detailed walkthrough of how to operate the order system is provided below.
+To access the order system, simply download the **menu.py** file in this repository and load it through your terminal. A detailed walkthrough of how to operate the order system is provided below.
 
 ---
 
